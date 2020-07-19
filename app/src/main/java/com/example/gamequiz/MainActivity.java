@@ -12,6 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //Новый проект проверка выгрузки
+    //Новый проект проверка выгрузки апаа
 
 }
