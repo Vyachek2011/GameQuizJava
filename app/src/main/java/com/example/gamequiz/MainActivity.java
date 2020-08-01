@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         if (TimeBackPress + 2000 > System.currentTimeMillis()){
             super.onBackPressed();
             MyToast.cancel();
-            finish();
             return;
         }
         else{
