@@ -40,7 +40,6 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/style_btn_startback"
                     android:textSize="24sp"
-                    android:layout_margin="10sp"
                     android:paddingLeft="15sp"
                     android:paddingRight="15sp"
                     android:text="@string/btnBack" />

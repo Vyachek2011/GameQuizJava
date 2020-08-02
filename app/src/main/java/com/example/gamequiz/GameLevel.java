@@ -29,6 +29,5 @@ public class GameLevel extends AppCompatActivity {
             }
         });
 
-
     }
 }
