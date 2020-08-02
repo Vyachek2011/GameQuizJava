@@ -22,6 +22,8 @@
         android:orientation="vertical"
         android:layout_centerVertical="true"
         android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         >
 
         <LinearLayout
@@ -32,7 +34,7 @@
             >
 
             <LinearLayout
-                android:id="@+id/llCont3"
+                android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -64,6 +66,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -72,163 +75,237 @@
                     android:id="@+id/tvPoint1"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint2"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint3"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint4"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint5"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint6"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint7"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint8"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint9"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint10"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint11"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint12"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint13"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint14"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint15"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint16"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint17"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint18"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint19"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
+
                 <TextView
                     android:id="@+id/tvPoint20"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/style_points_base"
                     android:text="" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/img_level_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/level1_number1"
+                    android:src="@drawable/level_base"
+                    android:gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/img_level_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/level1_number2"
+                    android:src="@drawable/level_base"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_text_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:gravity="center"
+                    android:textSize="24dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_text_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="24dp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
