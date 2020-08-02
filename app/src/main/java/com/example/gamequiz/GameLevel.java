@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class GameLevel extends AppCompatActivity {
 
@@ -29,5 +30,25 @@ public class GameLevel extends AppCompatActivity {
             }
         });
 
+        TextView NumberLevel1 = findViewById(R.id.tvNumber1);
+        NumberLevel1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GameLevel.this, Level1.class);
+                // Передача параметра - номер уровня
+
+
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(GameLevel.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        //super.onBackPressed();
     }
 }

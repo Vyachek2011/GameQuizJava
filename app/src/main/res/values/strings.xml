@@ -2,4 +2,5 @@
     <string name="app_name">Игра "Викторина"</string>
     <string name="btnStart">Начало</string>
     <string name="btnBack">Назад</string>
+    <string name="NumberTask">Уровень:</string>
 </resources>
