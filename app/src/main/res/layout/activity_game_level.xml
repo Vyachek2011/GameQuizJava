@@ -10,14 +10,427 @@
         android:id="@+id/Container1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/mian_background" />
+        android:src="@drawable/mian_background"
+        android:scaleType="centerCrop"/>
 
     <LinearLayout
+        android:id="@+id/llCont1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="10dp" />
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/llCont2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llCont3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10sp">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/style_btn_startback"
+                    android:textSize="24sp"
+                    android:layout_margin="10sp"
+                    android:paddingLeft="15sp"
+                    android:paddingRight="15sp"
+                    android:text="@string/btnBack" />
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/svScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <LinearLayout
+            android:id="@+id/Line1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNumber1"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="1" />
+            <TextView
+                android:id="@+id/tvNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="2" />
+            <TextView
+                android:id="@+id/tvNumber3"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="3" />
+            <TextView
+                android:id="@+id/tvNumber4"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="4" />
+            <TextView
+                android:id="@+id/tvNumber5"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="5" />
+        </LinearLayout>
+            <LinearLayout
+            android:id="@+id/Line2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNumber6"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="6" />
+            <TextView
+                android:id="@+id/tvNumber7"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="7" />
+            <TextView
+                android:id="@+id/tvNumber8"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="8" />
+            <TextView
+                android:id="@+id/tvNumber9"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="9" />
+            <TextView
+                android:id="@+id/tvNumber10"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:background="@drawable/style_levelnumber"
+                android:gravity="center"
+                android:textColor="@color/White"
+                android:layout_margin="10sp"
+                android:text="10" />
+        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Line3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNumber11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="11" />
+                <TextView
+                    android:id="@+id/tvNumber12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="12" />
+                <TextView
+                    android:id="@+id/tvNumber13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="13" />
+                <TextView
+                    android:id="@+id/tvNumber14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="14" />
+                <TextView
+                    android:id="@+id/tvNumber15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="15" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Line4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNumber16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="16" />
+                <TextView
+                    android:id="@+id/tvNumber17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="17" />
+                <TextView
+                    android:id="@+id/tvNumber18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="18" />
+                <TextView
+                    android:id="@+id/tvNumber19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="19" />
+                <TextView
+                    android:id="@+id/tvNumber20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="20" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Line5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNumber21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="16" />
+                <TextView
+                    android:id="@+id/tvNumber22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="22" />
+                <TextView
+                    android:id="@+id/tvNumber23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="23" />
+                <TextView
+                    android:id="@+id/tvNumber24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="24" />
+                <TextView
+                    android:id="@+id/tvNumber25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="25" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Line6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNumber26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="26" />
+                <TextView
+                    android:id="@+id/tvNumber27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="27" />
+                <TextView
+                    android:id="@+id/tvNumber28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="28" />
+                <TextView
+                    android:id="@+id/tvNumber29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="29" />
+                <TextView
+                    android:id="@+id/tvNumber30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:background="@drawable/style_levelnumber"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_margin="10sp"
+                    android:text="30" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>
