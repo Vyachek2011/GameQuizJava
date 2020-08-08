@@ -3,4 +3,16 @@
     <string name="btnStart">Начало</string>
     <string name="btnBack">Назад</string>
     <string name="NumberTask">Уровень:</string>
+    <string-array name="ValueNumbers">
+        <item>Ноль</item>
+        <item>Один</item>
+        <item>Два</item>
+        <item>Три</item>
+        <item>Четыре</item>
+        <item>Пять</item>
+        <item>Шесть</item>
+        <item>Семь</item>
+        <item>Восемь</item>
+        <item>Девять</item>
+    </string-array>
 </resources>

@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class GameLevel extends AppCompatActivity {
 
+    private String NumberSelectLevel = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,13 +32,14 @@ public class GameLevel extends AppCompatActivity {
             }
         });
 
-        TextView NumberLevel1 = findViewById(R.id.tvNumber1);
+        final TextView NumberLevel1 = findViewById(R.id.tvNumber1);
         NumberLevel1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                NumberSelectLevel = NumberLevel1.getText().toString();
                 Intent intent = new Intent(GameLevel.this, Level1.class);
                 // Передача параметра - номер уровня
-
+                intent.putExtra("ValuseNumberLevel", NumberSelectLevel);
 
                 startActivity(intent);
                 finish();
