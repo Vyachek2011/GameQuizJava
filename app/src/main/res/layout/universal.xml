@@ -267,9 +267,8 @@
                     android:layout_height="300dp"
                     android:layout_weight="1"
                     android:background="@drawable/style_image_base_level1"
-                    android:src="@drawable/level_base"
                     android:gravity="center"
-                    android:layout_marginRight="5dp"/>
+                    android:layout_marginRight="10dp"/>
 
                 <ImageView
                     android:id="@+id/img_level_right"
@@ -277,9 +276,8 @@
                     android:layout_height="300dp"
                     android:layout_weight="1"
                     android:background="@drawable/style_image_base_level1"
-                    android:src="@drawable/level_base"
                     android:gravity="center"
-                    android:layout_marginLeft="5dp"/>
+                    android:layout_marginLeft="10dp"/>
             </LinearLayout>
 
             <LinearLayout
