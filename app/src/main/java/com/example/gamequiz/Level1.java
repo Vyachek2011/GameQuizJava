@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -53,12 +53,38 @@ public class Level1 extends AppCompatActivity {
         });
 
         // Обработка левой картинки
-        ImageView LeftImage = (ImageView)findViewById(R.id.img_level_left);
+        final ImageView LeftImage = (ImageView)findViewById(R.id.img_level_left);
+        final ImageView RightImage = findViewById(R.id.img_level_right);
+
         TextView TextLeft = (TextView)findViewById(R.id.tv_text_left);
         ValueLeftImage = RandValue.nextInt(10);
         SetDataToImage(LeftImage, TextLeft, ValueLeftImage);
 
-        LeftImage.setOnClickListener(new View.OnClickListener() {
+        LeftImage.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    RightImage.setEnabled(false);
+                    if (ValueLeftImage > ValueRightImage){
+                        LeftImage.setImageResource(R.drawable.answer_true);
+                    }
+                    else{
+                        LeftImage.setImageResource(R.drawable.answer_false);
+                    }
+                }
+                else{
+                    if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                        RightImage.setEnabled(true);
+                    }
+                }
+
+
+
+                return true;
+            }
+        });
+
+        /*LeftImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (ValueLeftImage > ValueRightImage){
@@ -70,7 +96,7 @@ public class Level1 extends AppCompatActivity {
                     MyToast.show();
                 }
             }
-        });
+        });*/
 
         // Обработка правой картинки
         ValueRightImage = RandValue.nextInt(10);
@@ -78,11 +104,10 @@ public class Level1 extends AppCompatActivity {
             ValueRightImage = RandValue.nextInt(10);
         }
 
-        ImageView RightImage = findViewById(R.id.img_level_right);
         TextView TextRight = findViewById(R.id.tv_text_right);
         SetDataToImage(RightImage, TextRight, ValueRightImage);
 
-        RightImage.setOnClickListener(new View.OnClickListener() {
+        /*RightImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (ValueRightImage > ValueLeftImage){
@@ -94,7 +119,7 @@ public class Level1 extends AppCompatActivity {
                     MyToast.show();
                 }
             }
-        });
+        });*/
     }
 
     @Override
