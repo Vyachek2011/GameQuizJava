@@ -2,6 +2,7 @@ package com.example.gamequiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class Level1 extends AppCompatActivity {
+
+    Dialog MainDialog;
 
     ClassImagesLevel1 ImagesLevel1 = new ClassImagesLevel1();
     private Random RandValue = new Random();
