@@ -78,8 +78,6 @@ public class Level1 extends AppCompatActivity {
                     }
                 }
 
-
-
                 return true;
             }
         });
