@@ -3,7 +3,7 @@
     <string name="btnStart">Начало</string>
     <string name="btnBack">Назад</string>
     <string name="NumberTask">Уровень:</string>
-    <string name="btn_ResetLevel">Начать заного</string>
+    <string name="btn_ResetLevel">Начать заново</string>
     <string name="TaskLevel1">Сравните две предложенные цифры и выберите самую большую.</string>
     <string name="btn_continue">Продолжить</string>
     <string-array name="ValueNumbers">

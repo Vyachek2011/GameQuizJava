@@ -2,6 +2,7 @@ package com.example.gamequiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Level1 extends AppCompatActivity {
 
@@ -30,6 +32,43 @@ public class Level1 extends AppCompatActivity {
         aTextView.setText(StringNumbers[aNumber]);
     }
 
+    private void SetNewImageLeftAndRight(ImageView aLeftImage, ImageView aRightImage){
+        TextView TextLeft = (TextView)findViewById(R.id.tv_text_left);
+        ValueLeftImage = RandValue.nextInt(10);
+        SetDataToImage(aLeftImage, TextLeft, ValueLeftImage);
+
+        ValueRightImage = RandValue.nextInt(10);
+        while (ValueRightImage == ValueLeftImage) {
+            ValueRightImage = RandValue.nextInt(10);
+        }
+
+        TextView TextRight = findViewById(R.id.tv_text_right);
+        SetDataToImage(aRightImage, TextRight, ValueRightImage);
+    }
+
+    private void MySleep(long aTime){
+        long endTime = System.currentTimeMillis() + aTime * 500;
+        while (System.currentTimeMillis() < endTime) {
+            synchronized (this) {
+                try {
+                    wait(endTime - System.currentTimeMillis());
+                } catch (Exception e) {
+                }
+            }
+        }
+
+        /*
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+         */
+    }
+
+
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +98,11 @@ public class Level1 extends AppCompatActivity {
         final ImageView LeftImage = (ImageView)findViewById(R.id.img_level_left);
         final ImageView RightImage = findViewById(R.id.img_level_right);
 
-        TextView TextLeft = (TextView)findViewById(R.id.tv_text_left);
-        ValueLeftImage = RandValue.nextInt(10);
-        SetDataToImage(LeftImage, TextLeft, ValueLeftImage);
+        //TextView TextLeft = (TextView)findViewById(R.id.tv_text_left);
+        //ValueLeftImage = RandValue.nextInt(10);
+        //SetDataToImage(LeftImage, TextLeft, ValueLeftImage);
+
+        SetNewImageLeftAndRight(LeftImage, RightImage);
 
         LeftImage.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -77,7 +118,15 @@ public class Level1 extends AppCompatActivity {
                 }
                 else{
                     if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                        RightImage.setEnabled(false);
+                        LeftImage.setEnabled(false);
+
+                        MySleep(1);
+
+                        SetNewImageLeftAndRight(LeftImage, RightImage);
+
                         RightImage.setEnabled(true);
+                        LeftImage.setEnabled(true);
                     }
                 }
 
@@ -85,28 +134,47 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
-        /*LeftImage.setOnClickListener(new View.OnClickListener() {
+        RightImage.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                if (ValueLeftImage > ValueRightImage){
-                    Toast MyToast = Toast.makeText(getBaseContext(), "Левая картинка больше правой", Toast.LENGTH_SHORT);
-                    MyToast.show();
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    LeftImage.setEnabled(false);
+                    if (ValueLeftImage < ValueRightImage){
+                        RightImage.setImageResource(R.drawable.answer_true);
+                    }
+                    else{
+                        RightImage.setImageResource(R.drawable.answer_false);
+                    }
                 }
                 else{
-                    Toast MyToast = Toast.makeText(getBaseContext(), "ОШИБКА!!! ", Toast.LENGTH_SHORT);
-                    MyToast.show();
+                    if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                        RightImage.setEnabled(false);
+                        LeftImage.setEnabled(false);
+
+                        MySleep(1);
+
+                        SetNewImageLeftAndRight(LeftImage, RightImage);
+
+                        RightImage.setEnabled(true);
+                        LeftImage.setEnabled(true);
+                    }
                 }
+
+                return true;
             }
-        });*/
+        });
 
         // Обработка правой картинки
-        ValueRightImage = RandValue.nextInt(10);
+        /*ValueRightImage = RandValue.nextInt(10);
         while (ValueRightImage == ValueLeftImage) {
             ValueRightImage = RandValue.nextInt(10);
         }
 
         TextView TextRight = findViewById(R.id.tv_text_right);
-        SetDataToImage(RightImage, TextRight, ValueRightImage);
+        SetDataToImage(RightImage, TextRight, ValueRightImage);*/
+
+
+
 
         /*RightImage.setOnClickListener(new View.OnClickListener() {
             @Override

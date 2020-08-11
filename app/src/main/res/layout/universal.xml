@@ -278,6 +278,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_image_base_level1"
                     android:gravity="center"
+                    android:scaleType="fitXY"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
 
