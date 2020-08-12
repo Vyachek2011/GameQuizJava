@@ -25,6 +25,7 @@ public class Level1 extends AppCompatActivity {
     private Random RandValue = new Random();
     private int ValueLeftImage = -1;
     private int ValueRightImage = -1;
+    private int CountDoTaskInLevel = 0;
 
     private void SetDataToImage(ImageView aImageView, TextView aTextView, int aNumber){
         final String[] StringNumbers = getResources().getStringArray(R.array.ValueNumbers);
@@ -44,6 +45,8 @@ public class Level1 extends AppCompatActivity {
 
         TextView TextRight = findViewById(R.id.tv_text_right);
         SetDataToImage(aRightImage, TextRight, ValueRightImage);
+
+        CountDoTaskInLevel++;
     }
 
     private void MySleep(long aTime){
@@ -107,26 +110,26 @@ public class Level1 extends AppCompatActivity {
         LeftImage.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    RightImage.setEnabled(false);
-                    if (ValueLeftImage > ValueRightImage){
-                        LeftImage.setImageResource(R.drawable.answer_true);
-                    }
-                    else{
-                        LeftImage.setImageResource(R.drawable.answer_false);
-                    }
-                }
-                else{
-                    if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                if (CountDoTaskInLevel <= 20) {
+                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                         RightImage.setEnabled(false);
-                        LeftImage.setEnabled(false);
+                        if (ValueLeftImage > ValueRightImage) {
+                            LeftImage.setImageResource(R.drawable.answer_true);
+                        } else {
+                            LeftImage.setImageResource(R.drawable.answer_false);
+                        }
+                    } else {
+                        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                            RightImage.setEnabled(false);
+                            LeftImage.setEnabled(false);
 
-                        MySleep(1);
+                            MySleep(1);
 
-                        SetNewImageLeftAndRight(LeftImage, RightImage);
+                            SetNewImageLeftAndRight(LeftImage, RightImage);
 
-                        RightImage.setEnabled(true);
-                        LeftImage.setEnabled(true);
+                            RightImage.setEnabled(true);
+                            LeftImage.setEnabled(true);
+                        }
                     }
                 }
 
@@ -137,26 +140,26 @@ public class Level1 extends AppCompatActivity {
         RightImage.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    LeftImage.setEnabled(false);
-                    if (ValueLeftImage < ValueRightImage){
-                        RightImage.setImageResource(R.drawable.answer_true);
-                    }
-                    else{
-                        RightImage.setImageResource(R.drawable.answer_false);
-                    }
-                }
-                else{
-                    if (motionEvent.getAction() == MotionEvent.ACTION_UP){
-                        RightImage.setEnabled(false);
+                if (CountDoTaskInLevel <= 20) {
+                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                         LeftImage.setEnabled(false);
+                        if (ValueLeftImage < ValueRightImage) {
+                            RightImage.setImageResource(R.drawable.answer_true);
+                        } else {
+                            RightImage.setImageResource(R.drawable.answer_false);
+                        }
+                    } else {
+                        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                            RightImage.setEnabled(false);
+                            LeftImage.setEnabled(false);
 
-                        MySleep(1);
+                            MySleep(1);
 
-                        SetNewImageLeftAndRight(LeftImage, RightImage);
+                            SetNewImageLeftAndRight(LeftImage, RightImage);
 
-                        RightImage.setEnabled(true);
-                        LeftImage.setEnabled(true);
+                            RightImage.setEnabled(true);
+                            LeftImage.setEnabled(true);
+                        }
                     }
                 }
 
