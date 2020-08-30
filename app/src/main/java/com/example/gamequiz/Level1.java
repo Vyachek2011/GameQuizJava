@@ -1,10 +1,14 @@
 package com.example.gamequiz;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Level1 extends AppCompatActivity {
 
-    Dialog MainDialog;
+    //Dialog MainDialog;
 
     ClassImagesLevel1 ImagesLevel1 = new ClassImagesLevel1();
     private Random RandValue = new Random();
@@ -71,6 +75,7 @@ public class Level1 extends AppCompatActivity {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +84,36 @@ public class Level1 extends AppCompatActivity {
 
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        final Dialog MainDialog = new Dialog(this);
+        MainDialog.setContentView(R.layout.start_task_level);
+        //MainDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        MainDialog.setCancelable(true);
+        MainDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        MainDialog.show();
+
+        TextView btnCloseMainDialog = MainDialog.findViewById(R.id.tvCloseStartTskLevel);
+        btnCloseMainDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent IntentBackLevelGames = new Intent(Level1.this, GameLevel.class);
+                    startActivity(IntentBackLevelGames);
+                    finish();
+                } catch (Exception e) {
+                }
+                MainDialog.dismiss();
+            }
+        });
+
+        Button btnContinueDialog = MainDialog.findViewById(R.id.btnContinueDialog);
+        btnContinueDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainDialog.dismiss();
+            }
+        });
+
 
         Intent intent = getIntent();
         String NumberSelectLevel = intent.getStringExtra("ValuseNumberLevel");
@@ -98,8 +133,10 @@ public class Level1 extends AppCompatActivity {
         });
 
         // Обработка левой картинки
-        final ImageView LeftImage = (ImageView)findViewById(R.id.img_level_left);
+        final ImageView LeftImage = (ImageView) findViewById(R.id.img_level_left);
+        LeftImage.setClipToOutline(true);
         final ImageView RightImage = findViewById(R.id.img_level_right);
+        RightImage.setClipToOutline(true);
 
         //TextView TextLeft = (TextView)findViewById(R.id.tv_text_left);
         //ValueLeftImage = RandValue.nextInt(10);
