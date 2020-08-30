@@ -6,4 +6,6 @@
     <color name="Black95">#95000000</color>
     <color name="Black60">#60000000</color>
     <color name="White">#FFFFFF</color>
+    <color name="Green">#0FE418</color>
+    <color name="Red">#F10924</color>
 </resources>

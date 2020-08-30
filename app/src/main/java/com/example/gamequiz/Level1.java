@@ -29,7 +29,7 @@ public class Level1 extends AppCompatActivity {
     private Random RandValue = new Random();
     private int ValueLeftImage = -1;
     private int ValueRightImage = -1;
-    private int CountDoTaskInLevel = 0;
+    private int CountDoTaskInLevel = -1;
 
     private void SetDataToImage(ImageView aImageView, TextView aTextView, int aNumber){
         final String[] StringNumbers = getResources().getStringArray(R.array.ValueNumbers);
@@ -85,6 +85,7 @@ public class Level1 extends AppCompatActivity {
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        // Вызов и обработка диалогового окна
         final Dialog MainDialog = new Dialog(this);
         MainDialog.setContentView(R.layout.start_task_level);
         //MainDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -113,7 +114,7 @@ public class Level1 extends AppCompatActivity {
                 MainDialog.dismiss();
             }
         });
-
+        // Конец обработки диалогового окна
 
         Intent intent = getIntent();
         String NumberSelectLevel = intent.getStringExtra("ValuseNumberLevel");
@@ -147,10 +148,10 @@ public class Level1 extends AppCompatActivity {
         LeftImage.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (CountDoTaskInLevel <= 20) {
+                if (CountDoTaskInLevel < 20) {
                     if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                         RightImage.setEnabled(false);
-                        if (ValueLeftImage > ValueRightImage) {
+                        if (ValueLeftImage > ValueRightImage) { // Правильный ответ
                             LeftImage.setImageResource(R.drawable.answer_true);
                         } else {
                             LeftImage.setImageResource(R.drawable.answer_false);
@@ -160,6 +161,14 @@ public class Level1 extends AppCompatActivity {
                             RightImage.setEnabled(false);
                             LeftImage.setEnabled(false);
 
+                            TextView tvPointAnswer = findViewById(ImagesLevel1.ProgressAnswer[CountDoTaskInLevel]);
+                            if (ValueLeftImage > ValueRightImage){
+                                tvPointAnswer.setBackgroundResource(R.drawable.style_points_green);
+                            }
+                            else{
+                                tvPointAnswer.setBackgroundResource(R.drawable.style_points_red);
+                            }
+
                             MySleep(1);
 
                             SetNewImageLeftAndRight(LeftImage, RightImage);
@@ -168,6 +177,15 @@ public class Level1 extends AppCompatActivity {
                             LeftImage.setEnabled(true);
                         }
                     }
+                }
+                else{
+
+                    Dialog DialogAllRight = new Dialog(Level1.this);
+                    DialogAllRight.setContentView(R.layout.start_task_level);
+                    DialogAllRight.show();
+
+
+                    //Dialog DialogErrors = new Dialog(Level1.this);
                 }
 
                 return true;
@@ -190,6 +208,14 @@ public class Level1 extends AppCompatActivity {
                             RightImage.setEnabled(false);
                             LeftImage.setEnabled(false);
 
+                            TextView tvPointAnswer = findViewById(ImagesLevel1.ProgressAnswer[CountDoTaskInLevel]);
+                            if (ValueLeftImage < ValueRightImage){
+                                tvPointAnswer.setBackgroundResource(R.drawable.style_points_green);
+                            }
+                            else{
+                                tvPointAnswer.setBackgroundResource(R.drawable.style_points_red);
+                            }
+
                             MySleep(1);
 
                             SetNewImageLeftAndRight(LeftImage, RightImage);
@@ -198,6 +224,15 @@ public class Level1 extends AppCompatActivity {
                             LeftImage.setEnabled(true);
                         }
                     }
+                }
+                else{
+
+                    Dialog DialogAllRight = new Dialog(Level1.this);
+                    DialogAllRight.setContentView(R.layout.start_task_level);
+                    DialogAllRight.show();
+
+
+                    //Dialog DialogErrors = new Dialog(Level1.this);
                 }
 
                 return true;
