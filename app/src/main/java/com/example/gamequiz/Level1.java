@@ -152,7 +152,7 @@ public class Level1 extends AppCompatActivity {
         LeftImage.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (CountDoTaskInLevel < 20) {
+                if (CountDoTaskInLevel <= 19) {
                     if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                         RightImage.setEnabled(false);
                         if (ValueLeftImage > ValueRightImage) { // Правильный ответ
@@ -182,13 +182,9 @@ public class Level1 extends AppCompatActivity {
                                     LeftImage.setEnabled(true);
                                     RightImage.setEnabled(true);
                                     SetNewImageLeftAndRight(LeftImage, RightImage);
+                                    MySleep(1);
                                 }
                             },150); //150 is in milliseconds
-
-                            MySleep(1);
-
-                            //RightImage.setEnabled(true);
-                            //LeftImage.setEnabled(true);
                         }
                     }
                 }
@@ -217,9 +213,7 @@ public class Level1 extends AppCompatActivity {
 
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-
-
-                    if (CountDoTaskInLevel <= 20) {
+                    if (CountDoTaskInLevel <= 19) {
                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                             LeftImage.setEnabled(false);
                             if (ValueLeftImage < ValueRightImage) {
@@ -248,13 +242,9 @@ public class Level1 extends AppCompatActivity {
                                         RightImage.setEnabled(true);
                                         LeftImage.setEnabled(true);
                                         SetNewImageLeftAndRight(LeftImage, RightImage);
+                                        MySleep(1);
                                     }
                                 },150); //150 is in milliseconds
-
-                                MySleep(1);
-
-                                //RightImage.setEnabled(true);
-                                //LeftImage.setEnabled(true);
                             }
                         }
                     } else {
